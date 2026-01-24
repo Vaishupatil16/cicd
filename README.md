@@ -17,11 +17,11 @@ Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully auto
 | Tool        | Purpose                                                                 |
 |------------|-------------------------------------------------------------------------|
 | **GitHub** | Version control and repository hosting                                  |
-| **Jenkins**| Automate builds, testing, and deployment                                |
-| **Docker** | Containerization for consistent environments                             |
 | **SonarQube** | Code quality analysis and code coverage                                |
 | **OWASP ZAP** | Security vulnerability scanning                                      |
 | **Trivy**  | Container and dependency vulnerability scanning                         |
+| **Jenkins**| Automate builds, testing, and deployment                                |
+| **Docker** | Containerization for consistent environments                             |
 
 ---
 
