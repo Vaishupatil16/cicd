@@ -1,17 +1,26 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
-const products_1 = __importDefault(require("./routes/products"));
-const orders_1 = __importDefault(require("./routes/orders"));
-const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
-app.use(express_1.default.json());
-app.use("/api/products", products_1.default);
-app.use("/api/orders", orders_1.default);
+const express = require("express");
+const cors = require("cors");
+const client = require("prom-client");
+
+const products = require("./routes/products");
+const orders = require("./routes/orders");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// Prometheus default metrics
+client.collectDefaultMetrics();
+
+// Prometheus metrics endpoint
+app.get("/metrics", async (req, res) => {
+    res.set("Content-Type", client.register.contentType);
+    res.end(await client.register.metrics());
+});
+
+app.use("/api/products", products);
+app.use("/api/orders", orders);
+
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Backend running at http://localhost:${PORT}`);
