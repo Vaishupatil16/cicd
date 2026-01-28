@@ -1,27 +1,29 @@
 import express from "express";
 import cors from "cors";
-import productRoutes from "./routes/products";
-import orderRoutes from "./routes/orders";
-import client from "prom-client";
+import { metricsHandler, httpRequestCounter } from "./metrics";
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
-// Prometheus metrics
-client.collectDefaultMetrics();
-const register = client.register;
-
-app.get("/metrics", async (req, res) => {
-  res.setHeader("Content-Type", register.contentType);
-  res.end(await register.metrics());
+// Count requests (middleware)
+app.use((req, res, next) => {
+  res.on("finish", () => {
+    httpRequestCounter.inc({
+      method: req.method,
+      route: req.path,
+      status: res.statusCode
+    });
+  });
+  next();
 });
 
-app.use("/api/products", productRoutes);
-app.use("/api/orders", orderRoutes);
+// 👇 ADD THIS LINE (metrics endpoint)
+app.get("/metrics", metricsHandler);
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Backend running at http://localhost:${PORT}`);
+// existing routes stay as they are
+app.get("/", (req, res) => {
+  res.send("Backend running");
 });
+
+export default app;
