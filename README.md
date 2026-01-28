@@ -80,3 +80,8 @@ Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully auto
 - Automated testing and deployment using Jenkins and Docker  
 - Importance of code quality and security scanning in DevOps workflows  
 - Setting up application and infrastructure monitoring with Prometheus and Grafana  
+## 🎥 Project Presentation
+
+📺 Watch the visual presentation of this project:
+
+👉 https://www.youtube.com/watch?v=qUh66H2oNP8
