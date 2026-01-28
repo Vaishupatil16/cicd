@@ -10,12 +10,6 @@ An interactive online craft store built using **TypeScript**, **JavaScript**, an
 
 Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully automated **Continuous Integration and Continuous Deployment (CI/CD)** workflow using modern DevOps tools.  
 
-# CI/CD Pipeline Project
-
-Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully automated Continuous Integration and Continuous Deployment (CI/CD) workflow using modern DevOps tools, with monitoring and visualization included.  
-
----
-
 ## 🔧 Tools & Technologies Used
 
 | Tool       | Purpose                                                                 |
