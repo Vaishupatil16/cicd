@@ -21,6 +21,7 @@ Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully auto
 | Jenkins   | Automate builds, testing, and deployment                                 |
 | Docker    | Containerization for consistent environments                             |
 | Prometheus| Metrics collection and monitoring of applications and infrastructure    |
+| Minikube|   Local Kubernetes cluster to deploy and manage Dockerized applications   |
 | Grafana   | Visualization and dashboards for monitoring metrics                     |
 
 ---
@@ -82,6 +83,6 @@ Welcome to my **CI/CD Pipeline Project**! This project demonstrates a fully auto
 - Setting up application and infrastructure monitoring with Prometheus and Grafana  
 ## 🎥 Project Presentation
 
-📺 Watch the visual presentation of this project:
+#📺 Watch the visual presentation of this project:
 
-👉 https://www.youtube.com/watch?v=qUh66H2oNP8
+#👉 https://www.youtube.com/watch?v=qUh66H2oNP8
